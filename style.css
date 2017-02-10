@@ -9,3 +9,7 @@ div.bar {
     background-color: teal;
     margin-right: 3px;
 }
+
+svg {
+  border: 1px solid black;
+}
