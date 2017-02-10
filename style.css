@@ -1,0 +1,11 @@
+h1 {
+
+}
+
+div.bar {
+    display: inline-block;
+    width: 20px;
+    height: 75px;
+    background-color: teal;
+    margin-right: 3px;
+}
