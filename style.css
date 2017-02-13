@@ -30,7 +30,7 @@ svg {
 }
 
 #background-1 h1 {
-  font-family: roboto, sans-serif;
+  font-family: Anton, sans-serif;
   display: inline-block;
   font-size: 78px;
   color: black;
@@ -89,4 +89,13 @@ svg {
   padding: 0px 100px 0px 100px;
   text-shadow: 2px 2px 2px #f3ff1c;
   letter-spacing: 2px;
+}
+
+#section-2 {
+  position: absolute;
+  top: 1700px;
+  left: 0;
+  right: 0;
+  height: 600px;
+  background-color: #262626;
 }
