@@ -2,6 +2,10 @@ h1 {
 
 }
 
+body {
+  min-width: 410px;
+}
+
 div.bar {
     display: inline-block;
     width: 20px;
@@ -31,7 +35,7 @@ svg {
   font-size: 78px;
   color: black;
   margin-top: 300px;
-  padding: 0px 100px 0px 100px;
+  padding: 0px 20px 0px 20px;
   text-shadow: 2px 2px 2px red;
   letter-spacing: 2px;
 }
@@ -74,4 +78,15 @@ svg {
   background-size: cover!important;
   background-position: center;
   text-align: center;
+}
+
+#background-2 h2 {
+  font-family: roboto, sans-serif;
+  display: inline-block;
+  font-size: 78px;
+  color: #00bf19;
+  margin-top: 300px;
+  padding: 0px 100px 0px 100px;
+  text-shadow: 2px 2px 2px #f3ff1c;
+  letter-spacing: 2px;
 }
