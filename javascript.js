@@ -8,10 +8,30 @@ let topSpeedData = [
   [180,"1975"]
 ];
 
+let colors = ["blue", "red", "yellow", "green", "white"];
+
 let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
   .data(topSpeedData)
   .enter()
-  .append("circle");
+  .append("circle")
+  .attr("cx",300)
+  .attr("cy",300)
+  .attr('r',function(d,i) {
+    return 230 - (i * 30);
+  })
+  .style("fill", "none")
+  .attr("stroke-width", 30)
+  .attr("stroke", function(d,i) {
+    if(i >= colors.length) {
+      i = i % colors.length;
+    }
+    return colors[i];
+  })
+  // .style('stroke-dasharray',600);
+  .style('stroke-dasharray',function(d,i) {
+    return (230 - (i * 30)) * 3.1459;
+  })
+  .attr("transform", "rotate(90,300,300)");
 
 
 
