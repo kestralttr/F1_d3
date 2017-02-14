@@ -8,7 +8,7 @@ let topSpeedData = [
   [180,"1975"]
 ];
 
-let colors = ["blue", "red", "yellow", "green", "white"];
+let topSpeedColors = ["blue", "red", "yellow", "green", "white"];
 
 let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
   .data(topSpeedData)
@@ -22,10 +22,10 @@ let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
   .style("fill", "none")
   .attr("stroke-width", 30)
   .attr("stroke", function(d,i) {
-    if(i >= colors.length) {
-      i = i % colors.length;
+    if(i >= topSpeedColors.length) {
+      i = i % topSpeedColors.length;
     }
-    return colors[i];
+    return topSpeedColors[i];
   })
   // .style('stroke-dasharray',600);
   .style('stroke-dasharray',function(d,i) {
@@ -37,6 +37,15 @@ let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
     console.log(parseInt(d) * 1.7);
     return parseInt(d) * 1.7;
   });
+
+  d3.select("svg.top-speed-chart")
+    .append('circle')
+    .attr("cx",300)
+    .attr("cy",300)
+    .attr('r',250)
+    .attr('stroke-width',10)
+    .attr('stroke','black')
+    .style('fill','none');
 
 
 
