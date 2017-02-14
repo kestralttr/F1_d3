@@ -15,7 +15,7 @@ div.bar {
 }
 
 svg {
-  border: 1px solid black;
+
 }
 
 #background-1 {
@@ -96,11 +96,11 @@ svg {
   top: 1700px;
   left: 0;
   right: 0;
-  height: 600px;
+  height: 800px;
   background-color: #262626;
   text-align: center;
 }
 
 svg.top-speed-chart {
-
+  
 }

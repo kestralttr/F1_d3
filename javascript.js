@@ -14,8 +14,8 @@ let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
   .data(topSpeedData)
   .enter()
   .append("circle")
-  .attr("cx",300)
-  .attr("cy",300)
+  .attr("cx",400)
+  .attr("cy",400)
   .attr('r',function(d,i) {
     return 230 - (i * 30);
   })
@@ -31,7 +31,7 @@ let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
   .style('stroke-dasharray',function(d,i) {
     return (230 - (i * 30)) * 2 * 3.1459;
   })
-  .attr("transform", "rotate(90,300,300)")
+  .attr("transform", "rotate(90,400,400)")
   .style("stroke-dashoffset", function(d,i) {
     // find circumference length of circle
     let circ = (230 - (i * 30)) * 2 * 3.1459;
@@ -45,14 +45,42 @@ let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
 
   d3.select("svg.top-speed-chart")
     .append('circle')
-    .attr("cx",300)
-    .attr("cy",300)
+    .attr("cx",400)
+    .attr("cy",400)
     .attr('r',250)
     .attr('stroke-width',10)
     .attr('stroke','black')
     .style('fill','none');
 
+let topSpeedIndicators = [
+  [400,650,400,660],
+  [222,577,215,585],
+  [150,400,140,400],
+  [222,222,215,215],
+  [400,150,400,140],
+  [577,222,585,215],
+  [650,400,660,400],
+  [577,577,585,585]
+];
 
+  d3.select("svg.top-speed-chart").selectAll("line")
+    .data(topSpeedIndicators)
+    .enter()
+    .append("line")
+    .attr("x1",function(d) {
+      return d[0];
+    })
+    .attr("y1",function(d) {
+      return d[1];
+    })
+    .attr("x2",function(d) {
+      return d[2];
+    })
+    .attr("y2",function(d) {
+      return d[3];
+    })
+    .attr("stroke-width","5")
+    .attr("stroke","black");
 
 //
 // let dataset = [1,5,10,15,20];
