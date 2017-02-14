@@ -29,9 +29,14 @@ let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
   })
   // .style('stroke-dasharray',600);
   .style('stroke-dasharray',function(d,i) {
-    return (230 - (i * 30)) * 3.1459;
+    return (230 - (i * 30)) * 2 * 3.1459;
   })
-  .attr("transform", "rotate(90,300,300)");
+  .attr("transform", "rotate(90,300,300)")
+  .style("stroke-dashoffset", function(d,i) {
+    let circ = (230 - (i * 30)) * 2 * 3.1459;
+    console.log(parseInt(d) * 1.7);
+    return parseInt(d) * 1.7;
+  });
 
 
 
