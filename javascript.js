@@ -1,3 +1,20 @@
+
+
+let topSpeedData = [
+  [235,"2015"],
+  [229,"2005"],
+  [205,"1995"],
+  [212,"1985"],
+  [180,"1975"]
+];
+
+let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
+  .data(topSpeedData)
+  .enter()
+  .append("circle");
+
+
+
 //
 // let dataset = [1,5,10,15,20];
 //
