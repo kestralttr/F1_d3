@@ -34,8 +34,8 @@ let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
   .style("stroke-dashoffset", function(d,i) {
     // find length of circle's circumference
     let circ = (230 - (i * 30)) * 2 * 3.1459;
-    // create degree measurement from data (increased by 1.15 to show scale)
-    let degree = parseInt(d) * 1.15;
+    // create degree measurement from data (increased by 1.14 to show scale)
+    let degree = parseInt(d) * 1.14;
     // find cirumference length of the segment of the circle that will be represented
     let segmentCirc = (degree/360) * 2 * 3.1459 * (230 - (i * 30));
     // return circumference length from end that will NOT be shown (value of stroke-dashoffset)
@@ -105,7 +105,7 @@ let topSpeedIndicators = [
     })
     .text(function(d,i) {
       //Rounding and adjusting by 0.87 to match top speed modifier
-      return Math.round(i * 45 * 0.87);
+      return (i*40);
     })
     .attr("fill", "red");
 
