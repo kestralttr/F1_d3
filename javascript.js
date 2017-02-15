@@ -8,7 +8,7 @@ let topSpeedData = [
   [180,"1975"]
 ];
 
-let topSpeedColors = ["blue", "red", "yellow", "green", "white"];
+let topSpeedColors = ["blue", "red", "yellow", "green", "purple"];
 
 let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
   .data(topSpeedData)
@@ -27,13 +27,12 @@ let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
     }
     return topSpeedColors[i];
   })
-  // .style('stroke-dasharray',600);
   .style('stroke-dasharray',function(d,i) {
     return (230 - (i * 30)) * 2 * 3.1459;
   })
   .attr("transform", "rotate(90,400,400)")
   .style("stroke-dashoffset", function(d,i) {
-    // find circumference length of circle
+    // find length of circle's circumference
     let circ = (230 - (i * 30)) * 2 * 3.1459;
     // create degree measurement from data (increased by 1.15 to show scale)
     let degree = parseInt(d) * 1.15;
@@ -81,6 +80,74 @@ let topSpeedIndicators = [
     })
     .attr("stroke-width","5")
     .attr("stroke","black");
+
+
+    let topSpeedIndicatorText = [
+      [400,650,396,680],
+      [222,577,195,603],
+      [150,400,113,405],
+      [222,222,188,210],
+      [400,150,387,130],
+      [577,222,590,210],
+      [650,400,670,404],
+      [577,577,590,598]
+    ];
+
+  d3.select("svg.top-speed-chart").selectAll("text")
+    .data(topSpeedIndicatorText)
+    .enter()
+    .append("text")
+    .attr('x', function(d) {
+      return d[2];
+    })
+    .attr('y', function(d) {
+      return d[3];
+    })
+    .text(function(d,i) {
+      //Rounding and adjusting by 0.87 to match top speed modifier
+      return Math.round(i * 45 * 0.87);
+    })
+    .attr("fill", "red");
+
+  d3.select("svg.top-speed-chart")
+    .append("circle")
+    .attr("cx",400)
+    .attr("cy",400)
+    .attr("r",30)
+    .attr("fill","black");
+
+  d3.select("svg.top-speed-chart")
+    .append("line")
+    .attr("x1",400)
+    .attr("y1",400)
+    .attr("x2",600)
+    .attr("y2",400)
+    .attr("stroke-width",8)
+    .attr("stroke","black");
+
+  d3.select("svg.top-speed-chart")
+    .append("line")
+    .attr("x1",400)
+    .attr("y1",400)
+    .attr("x2",600)
+    .attr("y2",400)
+    .attr("stroke-width",1)
+    .attr("stroke","red");
+
+  d3.select("svg.top-speed-chart").selectAll("p")
+    .data(topSpeedData)
+    .enter()
+    .append("text")
+    .attr('x',function(d,i) {
+      return (i*50) + 285;
+    })
+    .attr('y',730)
+    .text(function(d) {
+      return d[1];
+    })
+    .attr('fill',function(d,i) {
+      return topSpeedColors[i];
+    });
 
 //
 // let dataset = [1,5,10,15,20];
