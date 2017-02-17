@@ -17,7 +17,7 @@ let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
   .attr("cx",400)
   .attr("cy",400)
   .attr('r',function(d,i) {
-    return 230 - (i * 30); 
+    return 230 - (i * 30);
   })
   .style("fill", "none")
   .attr("stroke-width", 30)
@@ -148,6 +148,8 @@ let topSpeedIndicators = [
     .attr('fill',function(d,i) {
       return topSpeedColors[i];
     });
+
+
 
 //
 // let dataset = [1,5,10,15,20];
