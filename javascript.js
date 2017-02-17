@@ -149,7 +149,27 @@ let topSpeedIndicators = [
       return topSpeedColors[i];
     });
 
+let hpData = [
+  [900,"F1 Car"],
+  [600,"Lamborghini"],
+  [235,"Honda Civic SI"],
+  [100,"Fiat 500"]
+];
 
+  d3.select("svg.engine-chart").selectAll('p')
+  .data(hpData)
+  .enter()
+  .append("rect")
+  .attr("x",0)
+  .attr("y", function(d) {
+    let newHeight = 325 - (d[0] * 0.325) + 25;
+    return newHeight;
+  })
+  .attr("width",400)
+  .attr("height",350)
+  .attr("fill", function(d,i) {
+    return topSpeedColors[i];
+  });
 
 //
 // let dataset = [1,5,10,15,20];
