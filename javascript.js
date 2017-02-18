@@ -152,9 +152,11 @@ let topSpeedIndicators = [
 let hpData = [
   [900,"F1 Car"],
   [600,"Lamborghini"],
-  [235,"Honda Civic SI"],
-  [100,"Fiat 500"]
+  [350,"Honda Civic SI"],
+  [105,"Fiat 500"]
 ];
+
+let hpDataColors = ["green","yellow","red","blue"];
 
   d3.select("svg.engine-chart").selectAll('p')
   .data(hpData)
@@ -162,13 +164,16 @@ let hpData = [
   .append("rect")
   .attr("x",0)
   .attr("y", function(d) {
-    let newHeight = 325 - (d[0] * 0.325) + 25;
+    let newHeight = 325 - (d[0] * 0.325);
     return newHeight;
+  })
+  .attr("id", function(d) {
+    return d[1];
   })
   .attr("width",400)
   .attr("height",350)
   .attr("fill", function(d,i) {
-    return topSpeedColors[i];
+    return hpDataColors[i];
   });
 
   d3.select("svg.engine-chart")
@@ -179,6 +184,66 @@ let hpData = [
     .attr("fill", "#262626")
     .attr("fill-rule", "evenodd");
 
+  d3.select("svg.engine-chart")
+    .append("line")
+    .attr("x1",400)
+    .attr("y1",30)
+    .attr("x2",400)
+    .attr("y2",320)
+    .attr("stroke-width",5)
+    .attr("stroke","black");
+
+let hpIndicatorData = [
+  [395,30,405,30],
+  [395,88,405,88],
+  [395,146,405,146],
+  [395,204,405,204],
+  [395,262,405,262],
+  [395,320,405,320]
+];
+
+  d3.select("svg.engine-chart").selectAll("p")
+    .data(hpIndicatorData)
+    .enter()
+    .append("line")
+    .attr("x1",function(d) {
+      return d[0];
+    })
+    .attr("y1",function(d) {
+      return d[1];
+    })
+    .attr("x2",function(d) {
+      return d[2];
+    })
+    .attr("y2",function(d) {
+      return d[3];
+    })
+    .attr("stroke-width",3)
+    .attr("stroke","black");
+
+let hpTextData = [
+  [410,30 + 5],
+  [410,88 + 5],
+  [410,146 + 5],
+  [410,204 + 5],
+  [410,262 + 5],
+  [410,320 + 5]
+];
+
+  d3.select("svg.engine-chart").selectAll("p")
+    .data(hpTextData)
+    .enter()
+    .append("text")
+    .attr("x",function(d) {
+      return d[0];
+    })
+    .attr("y",function(d) {
+      return d[1];
+    })
+    .text(function(d,i) {
+      return 1000 - (200*i);
+    })
+    .attr("fill", "red");
 //
 // let dataset = [1,5,10,15,20];
 //
