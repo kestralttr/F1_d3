@@ -97,6 +97,7 @@ let topSpeedIndicators = [
     .data(topSpeedIndicatorText)
     .enter()
     .append("text")
+    .attr("class","top-speed-text")
     .attr('x', function(d) {
       return d[2];
     })
@@ -107,7 +108,7 @@ let topSpeedIndicators = [
       //Rounding and adjusting by 0.87 to match top speed modifier
       return (i*40);
     })
-    .attr("fill", "red");
+    .attr("fill", "white");
 
   d3.select("svg.top-speed-chart")
     .append("circle")
@@ -151,7 +152,7 @@ let topSpeedIndicators = [
 
 let hpData = [
   [900,"F1 Car"],
-  [600,"Lamborghini"],
+  [610,"Lamborghini"],
   [350,"Honda Civic SI"],
   [105,"Fiat 500"]
 ];

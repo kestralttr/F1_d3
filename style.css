@@ -101,9 +101,26 @@ svg {
   text-align: center;
 }
 
+#section-2 h2 {
+  font-family: roboto, sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 40px;
+  margin-bottom: -60px;
+  color: white;
+
+}
+
 svg.top-speed-chart {
-  position: absolute;
-  right: 0;
+
+}
+
+svg text {
+  font-family: roboto, sans-serif;
+}
+
+.top-speed-text {
+
 }
 
 #background-3 {
