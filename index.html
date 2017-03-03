@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>F1 Stats</title>
-        <link REL=StyleSheet HREF="style.css" TYPE="text/css" MEDIA=screen>
-        <link REL=StyleSheet HREF="reset.css" TYPE="text/css" MEDIA=screen>
-        <link href="https://fonts.googleapis.com/css?family=Roboto|Anton" rel="stylesheet">
-        <script type="text/javascript" src="d3/d3.v3.js"></script>
+      <link REL=StyleSheet HREF="reset.css" TYPE="text/css" MEDIA=screen>
+      <link REL=StyleSheet HREF="style.css" TYPE="text/css" MEDIA=screen>
+      <link href="https://fonts.googleapis.com/css?family=Roboto|Anton" rel="stylesheet">
+      <script type="text/javascript" src="d3/d3.v3.js"></script>
   </head>
   <body>
     <div id="background-1">
@@ -26,8 +26,11 @@
     </div>
 
     <div id="section-2">
-      <h2>F1 Top Speed Records Through Time (in mph)</h2>
-      <svg width="800" height="800" class="top-speed-chart">
+      <h2>F1 Top Speed Records Over Time (in mph)</h2>
+      <svg viewBox="0 0 800 800"
+        preserveAspectRatio="xMidYMid meet"
+        class="top-speed-chart"
+        style="border: 2px solid yellow;">
 
       </svg>
     </div>
