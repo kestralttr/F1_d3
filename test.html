@@ -12,6 +12,7 @@
         vertical-align: top;
         overflow: hidden;
         max-width: 800px;
+        border: 2px solid blue;
       }
       .svg-content {
         display: inline-block;
@@ -22,6 +23,12 @@
     </style>
   </head>
   <body>
+    <div class="svg-container">
+      <svg class="svg-content" viewBox="0 0 300 100" preserveAspectRatio="xMidYMid meet" style="border: 2px solid purple">
+        <rect x="10px" y="10px" width="100px" height="50px" fill="red"/>
+        <circle cx="200px" cy="50px" r="25px" stroke-width="5px" stroke="green" fill="none"/>
+      </svg>
+    </div>
     <div class="svg-container">
       <svg class="svg-content" viewBox="0 0 300 100" preserveAspectRatio="xMidYMid meet" style="border: 2px solid purple">
         <rect x="10px" y="10px" width="100px" height="50px" fill="red"/>

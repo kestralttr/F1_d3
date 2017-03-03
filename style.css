@@ -51,11 +51,12 @@ svg {
 
 #section-1 h2 {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
   font-family: roboto, sans-serif;
   font-size: 30px;
   color: white;
 }
+
 
 #section-1 p {
   text-align: center;
@@ -63,10 +64,19 @@ svg {
   font-family: roboto, sans-serif;
   font-size: 20px;
   line-height: 25px;
-  padding: 0px 100px 0px 100px;
+  padding: 0px 60px 0px 60px;
   color: white;
 }
 
+@media (max-width:675px) {
+  #section-1 h2 {
+    font-size: 20px;
+  }
+  #section-1 p {
+    font-size: 14px;
+    margin-top: 30px;
+  }
+}
 
 #background-2 {
   position: absolute;
@@ -117,6 +127,8 @@ svg {
 @media (max-width:600px) {
   #section-2 h2 {
     font-size: 20px;
+    padding-top:20px;
+    margin-bottom: -40px;
   }
 }
 
