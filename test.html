@@ -4,6 +4,21 @@
     <meta charset="utf-8">
     <title></title>
     <style>
+      .test-container {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        /*padding-bottom: 100%;*/
+        vertical-align: top;
+        overflow: hidden;
+        max-width: 800px;
+        border: 2px solid blue;
+      }
+      .empty-box {
+        width: 300px;
+        height: 400px;
+        background-color: brown;
+      }
       .svg-container {
         display: inline-block;
         position: relative;
@@ -23,6 +38,12 @@
     </style>
   </head>
   <body>
+    <div class="test-container">
+      <div class="empty-box"></div>
+    </div>
+    <div class="test-container">
+      <div class="empty-box"></div>
+    </div>
     <div class="svg-container">
       <svg class="svg-content" viewBox="0 0 300 100" preserveAspectRatio="xMidYMid meet" style="border: 2px solid purple">
         <rect x="10px" y="10px" width="100px" height="50px" fill="red"/>
