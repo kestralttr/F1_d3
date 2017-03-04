@@ -32,7 +32,7 @@ let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
   })
   .attr("transform", "rotate(90,400,400)")
   .style("stroke-dashoffset", function(d,i) {
-    // find length of circle's circumference
+    // find length of circle's total circumference
     let circ = (230 - (i * 30)) * 2 * 3.1459;
     // create degree measurement from data (increased by 1.14 to show scale)
     let degree = parseInt(d) * 1.14;
@@ -40,7 +40,8 @@ let topSpeed = d3.select("svg.top-speed-chart").selectAll("circle")
     let segmentCirc = (degree/360) * 2 * 3.1459 * (230 - (i * 30));
     // return circumference length from end that will NOT be shown (value of stroke-dashoffset)
     return circ - segmentCirc;
-  });
+  })
+  .attr("class","top-speed-animation");
 
   d3.select("svg.top-speed-chart")
     .append('circle')
@@ -171,7 +172,7 @@ let hpDataColors = ["green","yellow","red","blue"];
   .attr("id", function(d) {
     return d[1];
   })
-  .attr("width",400)
+  .attr("width",390)
   .attr("height",350)
   .attr("fill", function(d,i) {
     return hpDataColors[i];
