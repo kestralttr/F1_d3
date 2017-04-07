@@ -246,3 +246,79 @@ let hpTextData = [
       return 1000 - (200*i);
     })
     .attr("fill", "white");
+
+let notInUse = function() {
+  document.getElementById("bar1").classList.remove("bar1");
+  document.getElementById("bar1").offsetWidth;
+  document.getElementById("bar1").classList.add("bar1");
+};
+
+let rect1Animation = function() {
+	let w;
+
+	let rect1 = document.getElementById("rect1");
+  rect1.setAttribute("width","0");
+  let animator = setInterval(function() {
+    w = parseInt(rect1.getAttribute("width"));
+    if(w>597) {
+      clearInterval(animator);
+    }
+    w += 3;
+    rect1.setAttribute("width",`${w}`);
+  },40);
+  //75 pixels a second
+};
+
+let rect2Animation = function() {
+	let w;
+	let rect2 = document.getElementById("rect2");
+  rect2.setAttribute("width","0");
+  let animator = setInterval(function() {
+    w = parseInt(rect2.getAttribute("width"));
+    if(w>597) {
+      clearInterval(animator);
+    }
+    w += 3;
+    rect2.setAttribute("width",`${w}`);
+  },55);
+  //54 pixels a second
+};
+
+let rect3Animation = function() {
+	let w;
+	let rect3 = document.getElementById("rect3");
+  rect3.setAttribute("width","0");
+  let animator = setInterval(function() {
+    w = parseInt(rect3.getAttribute("width"));
+    if(w>597) {
+      clearInterval(animator);
+    }
+    w += 3;
+    rect3.setAttribute("width",`${w}`);
+  },70);
+  //43 pixels a second
+};
+
+let rect4Animation = function() {
+	let w;
+	let rect4 = document.getElementById("rect4");
+  rect4.setAttribute("width","0");
+  let animator = setInterval(function() {
+    w = parseInt(rect4.getAttribute("width"));
+    if(w>597) {
+      clearInterval(animator);
+    }
+    w += 2;
+    rect4.setAttribute("width",`${w}`);
+  },60);
+  //33 pixels a second
+};
+
+let activateAnimation = function() {
+  let button = document.getElementById("animation-button");
+  button.disabled = true;
+  rect1Animation();
+  rect2Animation();
+  rect3Animation();
+  rect4Animation();
+};
