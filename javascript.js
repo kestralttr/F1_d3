@@ -243,15 +243,9 @@ let hpTextData = [
       return d[1];
     })
     .text(function(d,i) {
-      return 1000 - (200*i);
+      return 1000 - (200*i) + " hp";
     })
     .attr("fill", "white");
-
-let notInUse = function() {
-  document.getElementById("bar1").classList.remove("bar1");
-  document.getElementById("bar1").offsetWidth;
-  document.getElementById("bar1").classList.add("bar1");
-};
 
 let rect1Animation = function() {
 	let w;
@@ -305,7 +299,7 @@ let rect4Animation = function() {
   rect4.setAttribute("width","0");
   let animator = setInterval(function() {
     w = parseInt(rect4.getAttribute("width"));
-    if(w>597) {
+    if(w>599) {
       clearInterval(animator);
     }
     w += 2;
@@ -321,4 +315,7 @@ let activateAnimation = function() {
   rect2Animation();
   rect3Animation();
   rect4Animation();
+  setTimeout(function() {
+    button.disabled = false;
+  },18000);
 };

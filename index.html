@@ -17,7 +17,7 @@
     <section id="section-1">
       <h2>Formula One Cars</h2>
       <p>
-        Since its formation in 1946, Formula One has long pushed the automobile to its absolute limits.  Formula One teams spend hundreds of millions of dollars developing vehicles with blistering acceleration, jaw-dropping braking, and unreal amounts of horsepower.  Let's take a look at some of the statistics that show what makes these cars so special.
+        Since its formation in 1946, Formula One has long pushed the automobile to its absolute limits.  Formula One teams spend hundreds of millions of dollars developing vehicles with blistering acceleration, jaw-dropping braking, and unreal amounts of horsepower.  Let's take a look at what makes these cars so special.
       </p>
     </section>
 
@@ -60,20 +60,49 @@
 
     <section id="section-4">
       <h2>Quarter Mile Times</h2>
-      <svg viewBox="0 0 800 400"
+      <h3>Click the button to see the actual times in motion</h3>
+      <svg viewBox="0 0 800 560"
         preserveAspectRatio="xMidYMid meet"
         class="quarter-mile-chart">
+
+        <pattern id="pattern"
+         x="0" y="0" width="24" height="24"
+         patternUnits="userSpaceOnUse" >
+          <rect fill="rgba(200, 200, 200, 1)" x="0" width="12" height="12" y="0"/>
+          <rect fill="rgba(200, 200, 200, 1)" x="12" width="12" height="12" y="12"/>
+        </pattern>
+
+        <rect x="700" y="39" width="100" height="295" fill="url(#pattern)" />
+        <rect x="75" y="39" width="25" height="295" fill="black" />
+
         <rect id="rect1" x="100" y="50" width="600" height="50" fill="green" />
         <rect id="rect2" x="100" y="125" width="600" height="50" fill="yellow" />
         <rect id="rect3" x="100" y="200" width="600" height="50" fill="red" />
         <rect id="rect4" x="100" y="275" width="600" height="50" fill="blue" />
 
+        <image x="50" y="400" width="125" height="125" href='https://res.cloudinary.com/dzo2s4ovl/image/upload/v1487759509/f1_icon_znyfec.jpg'> </image>
+        <rect x="50" y="400" width="125" height="125" fill="none" stroke="green" stroke-width="5px"/>
+        <image x="240" y="400" width="125" height="125" href='https://res.cloudinary.com/dzo2s4ovl/image/upload/v1487759739/lambo_icon_qpznyy.jpg'> </image>
+        <rect x="240" y="400" width="125" height="125" fill="none" stroke="yellow" stroke-width="5px"/>
+        <image x="435" y="400" width="125" height="125" href='http://res.cloudinary.com/dzo2s4ovl/image/upload/v1487759785/nissan350z_icon_lyxq2h.jpg'> </image>
+        <rect x="435" y="400" width="125" height="125" fill="none" stroke="red" stroke-width="5px"/>
+        <image x="625" y="400" width="125" height="125" href='http://res.cloudinary.com/dzo2s4ovl/image/upload/v1487759906/fiat500_icon_segxxm.jpg'> </image>
+        <rect x="625" y="400" width="125" height="125" fill="none" stroke="blue" stroke-width="5px"/>
+
+        <text x="370" y="80" fill="#262626">8 seconds</text>
+        <text x="365" y="155" fill="#262626">11 seconds</text>
+        <text x="365" y="230" fill="#262626">14 seconds</text>
+        <text x="365" y="305" fill="#262626">18 seconds</text>
+
       </svg><br>
 
       <button id="animation-button" onclick="activateAnimation()">
-      Start!
+      Start Your Engines!
       </button>
     </section>
+
+    <div id="background-5">
+    </div>
 
     <script type="text/javascript" src="javascript.js"></script>
   </body>

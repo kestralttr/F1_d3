@@ -230,10 +230,6 @@ svg.engine-chart {
   vertical-align: top;
   overflow: hidden;
   height:600px;
-  /*position: absolute;
-  top: 2500px;
-  width: 100%;
-  height: 700px;*/
   background-repeat: no-repeat;
   background-image: url('http://res.cloudinary.com/dzo2s4ovl/image/upload/v1491530451/monaco-grandprix_lv3hpi.jpg');
   background-size: cover!important;
@@ -260,7 +256,7 @@ svg.engine-chart {
   overflow: hidden;
   background-color: #262626;
   text-align: center;
-
+  padding-bottom: 40px;
 }
 
 #section-4 h2 {
@@ -272,10 +268,16 @@ svg.engine-chart {
   color: white;
 }
 
+#section-4 h3 {
+  font-family: roboto, sans-serif;
+  font-size: 20px;
+  padding-top: 10px;
+  color: white;
+}
+
 svg.quarter-mile-chart {
   display: inline-block;
   max-width:800px;
-  border: 1px solid purple;
   margin: 0 auto;
 }
 
@@ -289,7 +291,30 @@ svg.quarter-mile-chart {
 
 
 #animation-button {
-  margin-top: 50px;
+  font-family: roboto, sans-serif;
+  outline: none;
+  background-color: Transparent;
+  border: 3px solid white;
+  color: white;
+  font-size: 20px;
+  box-shadow: 0px 0px 10px #000;
+}
+
+#animation-button:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 5px #fff;
+}
+
+#animation-button:active {
+  box-shadow: 0px 0px 10px #000;
+  color: grey;
+  border: 3px solid grey;
+}
+
+#animation-button:disabled {
+  box-shadow: 0px 0px 10px #000;
+  color: grey;
+  border: 3px solid grey;
 }
 
 @keyframes growAnimation {
@@ -311,4 +336,18 @@ svg.quarter-mile-chart {
   animation: growAnimation 8s;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
+}
+
+#background-5 {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  vertical-align: top;
+  overflow: hidden;
+  height:600px;
+  background-repeat: no-repeat;
+  background-image: url('http://res.cloudinary.com/dzo2s4ovl/image/upload/v1491551709/hamilton-small_tcupug.jpg');
+  background-size: cover!important;
+  background-position: center;
+  text-align: center;
 }
